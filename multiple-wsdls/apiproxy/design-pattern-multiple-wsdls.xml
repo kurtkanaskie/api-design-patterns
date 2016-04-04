@@ -5,7 +5,7 @@
     <CreatedBy>kurt.kanaskie@gmail.com</CreatedBy>
     <Description>Design Pattern proxy-to-mulitple-wsdls.</Description>
     <DisplayName>electronic-commerce</DisplayName>
-    <LastModifiedAt>1459772763257</LastModifiedAt>
+    <LastModifiedAt>1459775695146</LastModifiedAt>
     <LastModifiedBy>kurt.kanaskie@gmail.com</LastModifiedBy>
     <Policies>
         <Policy>AM-Add-Credentials</Policy>
@@ -79,4 +79,5 @@
     <TargetEndpoints>
         <TargetEndpoint>default</TargetEndpoint>
     </TargetEndpoints>
+    <validate>false</validate>
 </APIProxy>
