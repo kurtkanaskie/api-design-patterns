@@ -22,11 +22,11 @@ Apigee "SOAP service" proxy[1] <--> WSDL[1..n].
 
 The high level flow for each proxy endpoint resource (proxy-to-multiple-wsdls):
 
-###REQUEST:
+####REQUEST:
 * Extract Variables to get RESTful request parameters and body.
 * Assign Message to create the SOAP request, change verb, add authorization and set target URL
 
-###RESPONSE:
+####RESPONSE:
 * if backend response is OK (2xx)
 	* Extract Variables to get the SOAP fault message.
 	* Raise Fault with the SOAP fault message.
