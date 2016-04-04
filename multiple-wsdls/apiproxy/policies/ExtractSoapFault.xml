@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables enabled="true" continueOnError="false" async="false" name="ExtractSoapFault">
+    <DisplayName>ExtractSoapFault Policy</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <XMLPayload stopPayloadProcessing="false">
+        <Namespaces>
+            <Namespace prefix="soap-env">http://schemas.xmlsoap.org/soap/envelope/</Namespace>
+        </Namespaces>
+        <Variable type="string" name="error-message">
+            <XPath>/soap-env:Envelope/soap-env:Body/soap-env:Fault/faultstring</XPath>
+        </Variable>
+    </XMLPayload>
+</ExtractVariables>

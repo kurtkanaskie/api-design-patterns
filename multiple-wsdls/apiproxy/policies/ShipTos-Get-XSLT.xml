@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XSL enabled="true" continueOnError="false" async="false" name="ShipTos-Get-XSLT">
+    <DisplayName>Shipping Locations Get XSL Transform</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Parameters ignoreUnresolvedVariables="true"/>
+    <ResourceURL>xsl://ZGOTCW_SHIPTOS_OF_SOLDTO_GET.xslt</ResourceURL>
+    <Source>response</Source>
+</XSL>

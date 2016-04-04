@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables enabled="true" continueOnError="false" async="false" name="ShipTos-Get-ExtractVariables">
+    <DisplayName>Shipping Locations Get Extract Variables</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <QueryParam name="customerNumber">
+        <Pattern ignoreCase="true">{qp-customer-id}</Pattern>
+    </QueryParam>
+    <QueryParam name="division">
+        <Pattern ignoreCase="true">{division}</Pattern>
+    </QueryParam>
+    <QueryParam name="distributionChannel">
+        <Pattern ignoreCase="true">{distribution-channel}</Pattern>
+    </QueryParam>
+    <QueryParam name="salesArea">
+        <Pattern ignoreCase="true">{sales-area}</Pattern>
+    </QueryParam>
+    <URIPath>
+        <Pattern ignoreCase="true">/customers/{customer-id}/shippingLocations</Pattern>
+    </URIPath>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>

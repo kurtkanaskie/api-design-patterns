@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage enabled="true" continueOnError="false" async="false" name="ShipTos-Get-AssignMessage">
+    <DisplayName>Shipping Locations Get Assign Message</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Add>
+        <Headers>
+            <Header name="Authorization">Basic YXBpZ2VlOldlYkFQSTEy</Header>
+        </Headers>
+    </Add>
+    <Set>
+        <Payload contentType="text/xml">
+            <soapenv:Envelope
+                xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">
+                <soapenv:Header/>
+                <soapenv:Body>
+                    <urn:ZlotcShiptosOfSoldtoGet>
+                        <ImDistrChan>{distribution-channel}</ImDistrChan>
+                        <ImDivision>{division}</ImDivision>
+                        <ImSalesOrg>{sales-area}</ImSalesOrg>
+                        <ImSoldTo>{qp-customer-id}{customer-id}</ImSoldTo>
+                        <TBapisoldto/>
+                        <TReturn/>
+                        <TShiptos/>
+                    </urn:ZlotcShiptosOfSoldtoGet>
+                </soapenv:Body>
+            </soapenv:Envelope>
+        </Payload>
+        <Verb>POST</Verb>
+    </Set>
+    <AssignVariable>
+        <Name>am.target.url</Name>
+        <Value>/sap/bc/srt/rfc/sap/zgotcw_shiptos_of_soldto_get/300/zgotcw_shiptos_of_soldto_get/zgotcw_shiptos_of_soldto_get_bind</Value>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

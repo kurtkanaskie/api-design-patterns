@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Javascript timeLimit="200" enabled="true" continueOnError="false" async="false" name="SetTargetVariable">
+    <DisplayName>JavaScript set target variable.</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <ResourceURL>jsc://setTargetVar.js</ResourceURL>
+</Javascript>

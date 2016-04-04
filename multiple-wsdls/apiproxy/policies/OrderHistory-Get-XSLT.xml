@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XSL enabled="true" continueOnError="false" async="false" name="OrderHistory-Get-XSLT">
+    <DisplayName>Order History Get XSL Transform</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Parameters ignoreUnresolvedVariables="true"/>
+    <ResourceURL>xsl://ZGOTCW_ORDER_HISTORY_REPORT_US.xslt</ResourceURL>
+    <Source>response</Source>
+</XSL>

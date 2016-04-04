@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables enabled="true" continueOnError="false" async="false" name="CreditCard-Put-ExtractVariables">
+    <DisplayName>Credit Card Put Area Extract Variables</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <URIPath>
+        <Pattern ignoreCase="true">/customers/{customer-id}/creditCards/{cc-id}</Pattern>
+    </URIPath>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <JSONPayload>
+        <Variable name="cc-type">
+            <JSONPath>creditCard.type</JSONPath>
+        </Variable>
+        <Variable name="cc-name">
+            <JSONPath>creditCard.name</JSONPath>
+        </Variable>
+        <Variable name="cc-accountName">
+            <JSONPath>creditCard.accountName</JSONPath>
+        </Variable>
+        <Variable name="cc-category">
+            <JSONPath>creditCard.category</JSONPath>
+        </Variable>
+        <Variable name="cc-validFrom">
+            <JSONPath>creditCard.validFrom</JSONPath>
+        </Variable>
+        <Variable name="cc-validThru">
+            <JSONPath>creditCard.validThru</JSONPath>
+        </Variable>
+    </JSONPayload>
+</ExtractVariables>

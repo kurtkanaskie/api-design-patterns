@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="default">
+    <Description>Apigee auto generated target endpoint</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="SOAP Fault">
+            <Description/>
+            <Request/>
+            <Response>
+                <Step>
+                    <Name>ExtractSoapFault</Name>
+                </Step>
+                <Step>
+                    <Name>Raise-Fault-SOAP-Fault</Name>
+                </Step>
+            </Response>
+            <Condition>response.status.code = "2xx"</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response></Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>SetTargetVariable</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <HTTPTargetConnection>
+        <Properties>
+            <Property name="success.codes">2XX, 1XX, 5XX, 4XX</Property>
+        </Properties>
+        <URL>https://sap.system.of.record.com:443</URL>
+    </HTTPTargetConnection>
+</TargetEndpoint>

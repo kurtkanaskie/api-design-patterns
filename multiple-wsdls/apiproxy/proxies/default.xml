@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>Default Proxy to create flows on an API</Description>
+    <FaultRules/>
+    <Flows>
+        <Flow name="get-customer">
+            <Description>Get customer details.</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>Customer-Get-ExtractVariables</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>Customer-Get-AssignMessage</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Condition>(response.status.code = "200")</Condition>
+                    <FaultRules/>
+                    <Name>Customer-Get-XSLT</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/customers/*") and ((request.verb = "GET") or (request.verb = "POST"))</Condition>
+        </Flow>
+        <Flow name="get-customer-sales-areas">
+            <Description>Get customer sales areas.</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>SalesAreas-Get-ExtractVariables</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>SalesAreas-Get-AssignMessage</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>SalesAreas-Get-XSLT</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/customers/*/salesAreas") and ((request.verb = "GET") or (request.verb = "POST"))</Condition>
+        </Flow>
+        <Flow name="get-customer-shipping-locations">
+            <Description>Get customer shipping locations.</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>ShipTos-Get-ExtractVariables</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>ShipTos-Get-AssignMessage</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>ShipTos-Get-XSLT</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/customers/*/shippingLocations") and ((request.verb = "GET") or (request.verb = "POST"))</Condition>
+        </Flow>
+        <Flow name="get-customer-orders">
+            <Description>Get customer list of orders.</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>OrderList-Get-ExtractVariables</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>OrderList-Get-AssignMessage</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>OrderList-Get-XSLT</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/customers/*/orders") and ((request.verb = "GET") or (request.verb = "POST"))</Condition>
+        </Flow>
+        <Flow name="get-customer-order-history">
+            <Description>Get customer order history.</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>OrderHistory-Get-ExtractVariables</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>OrderHistory-Get-AssignMessage</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>OrderHistory-Get-XSLT</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/customers/*/orderHistory") and ((request.verb = "GET") or (request.verb = "POST"))</Condition>
+        </Flow>
+        <Flow name="get-shipping-locations">
+            <Description>Get shipping locations.</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>ShipTos-Get-ExtractVariables</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>ShipTos-Get-AssignMessage</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>ShipTos-Get-XSLT</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/shippingLocations") and ((request.verb = "GET") or (request.verb = "POST"))</Condition>
+        </Flow>
+        <Flow name="get-orders">
+            <Description>Get list of orders.</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>OrderList-Get-ExtractVariables</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>OrderList-Get-AssignMessage</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>OrderList-Get-XSLT</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/orders") and ((request.verb = "GET") or (request.verb = "POST"))</Condition>
+        </Flow>
+        <Flow name="get-order">
+            <Description>Get order detail.</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>OrderDetail-Get-ExtractVariables</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>OrderDetail-Get-AssignMessage</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>OrderDetail-Get-XSLT</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/orders/*") and ((request.verb = "GET") or (request.verb = "POST"))</Condition>
+        </Flow>
+        <Flow name="get-order-history">
+            <Description>Get order history.</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>OrderHistory-Get-ExtractVariables</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>OrderHistory-Get-AssignMessage</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>OrderHistory-Get-XSLT</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/orderHistory") and ((request.verb = "GET") or (request.verb = "POST"))</Condition>
+        </Flow>
+        <Flow name="get-creditcards">
+            <Description>Get list of credit cards.</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreditCards-Get-ExtractVariables</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreditCards-Get-AssignMessage</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreditCards-Get-XSLT</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/customers/*/creditCards") and ((request.verb = "GET") or (am.target.endpoint = "get-creditcards"))</Condition>
+        </Flow>
+        <Flow name="get-creditcard">
+            <Description>Get credit card details.</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreditCard-Get-ExtractVariables</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreditCard-Get-AssignMessage</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreditCard-Get-XSLT</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/customers/*/creditCards/*") and ((request.verb = "GET") or (am.target.endpoint = "get-creditcard"))</Condition>
+        </Flow>
+        <Flow name="post-creditcards">
+            <Description>Create a new credit card.</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreditCard-Post-ExtractVariables</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreditCard-Post-AssignMessage</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreditCard-Post-XSLT</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/customers/*/creditCards") and ((request.verb = "POST") or (am.target.endpoint = "post-creditcard"))</Condition>
+        </Flow>
+        <Flow name="delete-creditcard">
+            <Description>Delete a credit card.</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreditCard-Delete-AExtractVariables</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreditCard-Delete-AssignMessage</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreditCard-Delete-XSLT</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/customers/*/creditCards/*") and ((request.verb = "DELETE") or (am.target.endpoint = "delete-creditcard"))</Condition>
+        </Flow>
+        <Flow name="put-creditcard">
+            <Description>Update credit card information.</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreditCard-Put-ExtractVariables</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreditCard-Put-AssignMessage</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <FaultRules/>
+                    <Name>CreditCard-Put-XSLT</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/customers/*/creditCards/*") and ((request.verb = "PUT") or (am.target.endpoint = "put-creditcard"))</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request>
+            <Step>
+                <Name>KV-Lookup-Credentials</Name>
+            </Step>
+            <Step>
+                <Name>AM-Add-Credentials</Name>
+            </Step>
+        </Request>
+        <Response>
+            <Step>
+                <Condition>(my.queryparam.format != "xml") and (request.header.accept != "application/xml")</Condition>
+                <FaultRules/>
+                <Name>XML-to-JSON</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>CORS-AssignMessage</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Condition>(request.verb = "OPTIONS")</Condition>
+                <FaultRules/>
+                <Name>RaiseCORSFault</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>Quota</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>SetQueryParamVariables</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>SetFlowVariable</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/electronicCommerce/v1</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

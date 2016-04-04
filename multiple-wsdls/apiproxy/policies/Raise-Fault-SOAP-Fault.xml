@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="Raise-Fault-SOAP-Fault">
+    <DisplayName>Raise Fault SOAP Fault</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Remove>
+            <Headers/>
+        </Remove>
+        <Set>
+            <Payload contentType="application/xml">
+                <customers>
+                    <count>0</count>
+                    <status>
+                        <code>E</code>
+                        <name>System Error</name>
+                        <details>{error-message}</details>
+                    </status>
+                </customers>
+            </Payload>
+            <StatusCode>500</StatusCode>
+            <ReasonPhrase>BACKEND SERVER ERROR</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

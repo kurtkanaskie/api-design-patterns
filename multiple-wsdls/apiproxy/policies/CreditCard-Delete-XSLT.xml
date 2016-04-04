@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XSL enabled="true" continueOnError="false" async="false" name="CreditCard-Delete-XSLT">
+    <DisplayName>Credit Card Delete XSL Transform</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Parameters ignoreUnresolvedVariables="true"/>
+    <ResourceURL>xsl://ZGOTCW_APAR_EBPP_DELETE_CARD.xslt</ResourceURL>
+    <Source>response</Source>
+</XSL>

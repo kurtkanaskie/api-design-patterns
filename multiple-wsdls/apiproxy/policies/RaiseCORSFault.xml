@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault enabled="true" continueOnError="false" async="false" name="RaiseCORSFault">
+    <DisplayName>Raise CORS Fault</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <FaultResponse>
+        <Remove>
+            <Headers/>
+        </Remove>
+        <Set>
+            <Headers>
+                <Header name="Access-Control-Allow-Origin">*</Header>
+                <Header name="Access-Control-Allow-Headers">origin, x-requested-with, accept</Header>
+                <Header name="Access-Control-Max-Age">3628800</Header>
+                <Header name="Access-Control-Allow-Methods">GET, PUT, POST, DELETE</Header>
+            </Headers>
+            <Payload contentType="text/xml">
+                <message>hello</message> 
+     </Payload>
+            <StatusCode>200</StatusCode>
+            <ReasonPhrase>hello</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

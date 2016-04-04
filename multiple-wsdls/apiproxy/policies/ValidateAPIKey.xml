@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GetOAuthV1Info enabled="true" continueOnError="false" async="false" name="ValidateAPIKey">
+    <DisplayName>Validate API Key</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <AppKey ref="request.queryparam.apikey"/>
+</GetOAuthV1Info>

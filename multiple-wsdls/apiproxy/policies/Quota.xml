@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Quota enabled="true" continueOnError="false" async="false" name="Quota">
+    <DisplayName>Quota Policy</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Allow countRef="apiproduct.developer.quota.limit" count="100"/>
+    <Interval ref="apiproduct.developer.quota.interval">1</Interval>
+    <Distributed>false</Distributed>
+    <Synchronous>false</Synchronous>
+    <TimeUnit ref="apiproduct.developer.quota.timeunit">minute</TimeUnit>
+</Quota>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage enabled="true" continueOnError="false" async="false" name="SetErrorStatus">
+    <DisplayName>SetErrorStatus</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Set>
+        <Payload contentType="application/xml">
+            <customers>
+                <count>0</count>
+                <status>
+                    <code>E</code>
+                    <name>System Error</name>
+                    <details>{error-message}</details>
+				</status>
+			</customers>
+		</Payload>
+        <StatusCode>500</StatusCode>
+        <ReasonPhrase>PLATFORM CUSTOM ERROR</ReasonPhrase>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</AssignMessage>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XSL enabled="true" continueOnError="false" async="false" name="OrderDetail-Get-XSLT">
+    <DisplayName>Order Detail Get XSL Transform</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Parameters ignoreUnresolvedVariables="true"/>
+    <ResourceURL>xsl://ZGOTCW_ISAORDER_GETDETAIL_LIST.xslt</ResourceURL>
+    <Source>response</Source>
+</XSL>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage enabled="true" continueOnError="false" async="false" name="OrderDetail-Get-AssignMessage">
+    <DisplayName>Order Detail Get Assign Message</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Add>
+        <Headers>
+            <Header name="Authorization">Basic YXBpZ2VlOldlYkFQSTEy</Header>
+        </Headers>
+    </Add>
+    <Set>
+        <Payload contentType="text/xml">
+            <SOAP-ENV:Envelope
+                xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <SOAP-ENV:Body>
+                    <m:ZgotcIsaorderGetdetailList
+                        xmlns:m="urn:sap-com:document:sap:soap:functions:mc-style">
+                        <ImBapiView>
+                            <Header>X</Header>
+                            <Item>X</Item>
+                            <Sdschedule>X</Sdschedule>
+                            <Business>X</Business>
+                            <Partner>X</Partner>
+                            <Address>X</Address>
+                            <StatusH>X</StatusH>
+                            <StatusI>X</StatusI>
+                            <Sdcond>X</Sdcond>
+                            <SdcondAdd>X</SdcondAdd>
+                            <Contract>X</Contract>
+                            <Text>X</Text>
+                            <Flow>X</Flow>
+                            <Billplan>X</Billplan>
+                            <Configure>X</Configure>
+                            <Credcard>X</Credcard>
+                            <IncompLog>X</IncompLog>
+                        </ImBapiView>
+                        <ImMemoryRead/>
+                        <OrderAddressOut/>
+                        <OrderBillingdatesOut/>
+                        <OrderBillingplansOut/>
+                        <OrderBusinessOut/>
+                        <OrderCfgsCublbsOut/>
+                        <OrderCfgsCucfgsOut/>
+                        <OrderCfgsCuinsOut/>
+                        <OrderCfgsCuprtsOut/>
+                        <OrderCfgsCurefsOut/>
+                        <OrderCfgsCuvalsOut/>
+                        <OrderCfgsCuvksOut/>
+                        <OrderCondHead/>
+                        <OrderCondItem/>
+                        <OrderCondQtyScale/>
+                        <OrderCondValScale/>
+                        <OrderConditionsOut/>
+                        <OrderContractsOut/>
+                        <OrderCreditcardsOut/>
+                        <OrderFlowsOut/>
+                        <OrderHeadersOut/>
+                        <OrderItemsOut/>
+                        <OrderPartnersOut/>
+                        <OrderSchedulesOut/>
+                        <OrderStatusheadersOut/>
+                        <OrderStatusitemsOut/>
+                        <OrderTextheadersOut/>
+                        <OrderTextlinesOut/>
+                        <SalesDocuments>
+                            <item>
+                                <Vbeln>{order-id}</Vbeln>
+                            </item>
+                        </SalesDocuments>
+                    </m:ZgotcIsaorderGetdetailList>
+                </SOAP-ENV:Body>
+            </SOAP-ENV:Envelope>
+        </Payload>
+        <Verb>POST</Verb>
+    </Set>
+    <AssignVariable>
+        <Name>am.target.url</Name>
+        <Value>/sap/bc/srt/rfc/sap/zgotcw_isaorder_getdetail_list/300/zgotcw_isaorder_getdetail_list/zgotcw_isaorder_getdetail_list_bind</Value>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

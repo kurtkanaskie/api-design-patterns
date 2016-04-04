@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage enabled="true" continueOnError="false" async="false" name="SalesAreas-Get-AssignMessage">
+    <DisplayName>Sales Areas Get Assign Message</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Add>
+        <Headers>
+            <Header name="Authorization">Basic YXBpZ2VlOldlYkFQSTEy</Header>
+        </Headers>
+    </Add>
+    <Set>
+        <Payload contentType="text/xml">
+            <soapenv:Envelope
+                xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">
+                <soapenv:Header/>
+                <soapenv:Body>
+                    <urn:IsaCustomerGetsalesareas>
+                        <Customerno>{customer-id}</Customerno>
+                        <Salesareas/>
+                    </urn:IsaCustomerGetsalesareas>
+                </soapenv:Body>
+            </soapenv:Envelope>
+        </Payload>
+        <Verb>POST</Verb>
+    </Set>
+    <AssignVariable>
+        <Name>am.target.url</Name>
+        <Value>/sap/bc/srt/rfc/sap/zgotcw_customer_getsalesareas/300/zgotcw_customer_getsalesareas/zgotcw_customer_getsalesareas_bind</Value>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

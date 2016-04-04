@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage enabled="true" continueOnError="false" async="false" name="Customer-Get-AssignMessage">
+    <DisplayName>Customer Get Assign Message</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Add>
+        <Headers>
+            <Header name="Authorization">Basic YXBpZ2VlOldlYkFQSTEy</Header>
+        </Headers>
+    </Add>
+    <Set>
+        <Payload contentType="text/xml">
+            <SOAP-ENV:Envelope
+                xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <SOAP-ENV:Body>
+                    <m:CustomerGetdetail2
+                        xmlns:m="urn:sap-com:document:sap:soap:functions:mc-style">
+                        <Customerno>{customer-id}</Customerno>
+                    </m:CustomerGetdetail2>
+                </SOAP-ENV:Body>
+            </SOAP-ENV:Envelope>
+        </Payload>
+        <Verb>POST</Verb>
+    </Set>
+    <AssignVariable>
+        <Name>am.target.url</Name>
+        <Value>/sap/bc/srt/rfc/sap/zgotcw_bapi_cust_getdetail2/300/zgotcw_bapi_cust_getdetail2/zgotcw_bapi_cust_getdetail2_bind</Value>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

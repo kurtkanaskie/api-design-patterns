@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage enabled="true" continueOnError="false" async="false" name="OrderHistory-Get-AssignMessage">
+    <DisplayName>Order History Get Assign Message</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Add>
+        <Headers>
+            <Header name="Authorization">Basic YXBpZ2VlOldlYkFQSTEy</Header>
+        </Headers>
+    </Add>
+    <Set>
+        <Payload contentType="text/xml">
+            <soapenv:Envelope
+                xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">
+                <soapenv:Header/>
+                <soapenv:Body>
+                    <urn:ZlotcOrderHistoryReportUs>
+                        <ImFlagTotalDoss/>
+                        <ImOrderDateFrom>{from-date}</ImOrderDateFrom>
+                        <ImOrderDateTo>{to-date}</ImOrderDateTo>
+                        <ImSoldToParty>{qp-customer-id}{customer-id}</ImSoldToParty>
+                        <TabShipLocation/>
+                        <TabShipToParty>
+                            <item>
+                                <Kunnr>{ship-to-id}</Kunnr>
+                            </item>
+                        </TabShipToParty>
+                        <TabTotal/>
+                    </urn:ZlotcOrderHistoryReportUs>
+                </soapenv:Body>
+            </soapenv:Envelope>
+        </Payload>
+        <Verb>POST</Verb>
+    </Set>
+    <AssignVariable>
+        <Name>am.target.url</Name>
+        <Value>/sap/bc/srt/rfc/sap/zgotcw_order_history_report_us/300/zgotcw_order_history_report_us/zgotcw_order_history_report_us_bind</Value>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

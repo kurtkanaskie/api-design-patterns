@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables enabled="true" continueOnError="false" async="false" name="OrderList-Get-ExtractVariables">
+    <DisplayName>OrderList EGet xtract Variables</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <QueryParam name="customerNumber">
+        <Pattern ignoreCase="true">{qp-customer-id}</Pattern>
+    </QueryParam>
+    <QueryParam name="salesOrganization">
+        <Pattern ignoreCase="true">{sales-organization}</Pattern>
+    </QueryParam>
+    <QueryParam name="fromDate">
+        <Pattern ignoreCase="true">{from-date}</Pattern>
+    </QueryParam>
+    <QueryParam name="toDate">
+        <Pattern ignoreCase="true">{to-date}</Pattern>
+    </QueryParam>
+    <QueryParam name="materialNumber">
+        <Pattern ignoreCase="true">{material}</Pattern>
+    </QueryParam>
+    <URIPath>
+        <Pattern ignoreCase="true">/customers/{customer-id}/orders</Pattern>
+    </URIPath>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>
