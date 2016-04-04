@@ -27,9 +27,9 @@ The high level flow for each proxy endpoint resource (proxy-to-multiple-wsdls):
 * Assign Message to create the SOAP request, change verb, add authorization and set target URL
 
 ###RESPONSE:
-if backend response is OK (2xx)
+* if backend response is OK (2xx)
 	* Extract Variables to get the SOAP fault message.
 	* Raise Fault with the SOAP fault message.
-else
+* else
 	* XSL Transform the backend response to the RESTful response.
 	* XML to JSON conditionally based on request parameters. 
