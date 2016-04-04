@@ -1,6 +1,4 @@
-# design-pattern-proxy-to-multiple-wsdls
-
-## Proxy to Many WSDLs Design Pattern
+## Design Pattern - Proxy to Multiple WSDLs
 An example API proxy to expose RESTful APIs from multiple WSDL backend endpoints.
 
 Some enterprise applications, such as SAP, use a micro-services or singular approach to WSDL designs where there is a single WSDL with a single operation. Therefore the proxy will need to use multiple WSDLs to create the right context. The proxy design pattern is one proxy to many WSDLs:
