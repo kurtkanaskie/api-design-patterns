@@ -7,12 +7,12 @@ Often a large enterprise customer will want to connect to "legacy" systems and d
 Apigee "Node.js App" proxy <--> express <--> adapter module <--> backend
 
 The examples in this pattern include:
-	* MongoDB (node-to-mongodb)
-	* mySQL (node-to-mysql)
-	* MS SQL (node-to-mssql)
-	* Terradata (node-to-terradata)
-	* Postgres (node-to-postgres)
-	* Oracle (node-to-oracle)
+* MongoDB (node-to-mongodb)
+* mySQL (node-to-mysql)
+* MS SQL (node-to-mssql)
+* Terradata (node-to-terradata)
+* Postgres (node-to-postgres)
+* Oracle (node-to-oracle)
 
 ## Proxy to Many WSDLs Design Pattern
 
@@ -23,14 +23,13 @@ Apigee "SOAP service" proxy[1] <--> WSDL[1..n].
 The high level flow for each proxy endpoint resource (proxy-to-multiple-wsdls):
 
 ###REQUEST:
-	* Extract Variables to get RESTful request parameters and body.
-	* Assign Message to create the SOAP request, change verb, add authorization and set target URL
+* Extract Variables to get RESTful request parameters and body.
+* Assign Message to create the SOAP request, change verb, add authorization and set target URL
 
 ###RESPONSE:
-	if backend response is OK (2xx)
-		* Extract Variables to get the SOAP fault message.
-		* Raise Fault with the SOAP fault message.
-	else
-		* XSL Transform the backend response to the RESTful response.
-		* XML to JSON conditionally based on request parameters. 
-
+if backend response is OK (2xx)
+	* Extract Variables to get the SOAP fault message.
+	* Raise Fault with the SOAP fault message.
+else
+	* XSL Transform the backend response to the RESTful response.
+	* XML to JSON conditionally based on request parameters. 
