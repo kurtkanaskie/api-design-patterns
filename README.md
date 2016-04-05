@@ -7,8 +7,8 @@ Often a large enterprise customer will want to connect to "legacy" systems and d
 Apigee "Node.js App" proxy <--> express <--> adapter module <--> backend
 
 The examples in this pattern include:
-* MongoDB (node-to-mongodb)
 * mySQL (node-to-mysql)
+* MongoDB (node-to-mongodb)
 * MS SQL (node-to-mssql)
 * Terradata (node-to-terradata)
 * Postgres (node-to-postgres)
