@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Assign-Message-Blocked-Host">
+    <DisplayName>Assign Message Blocked Host</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Set>
+        <Headers/>
+        <Payload contentType="application/json" variablePrefix="$" variableSuffix="#">{&quot;request&quot;:{&quot;metadata&quot;:{&quot;faultName&quot;:&quot;$fault.name#&quot;,&quot;path&quot;:&quot;$request.path#&quot;,&quot;message&quot;:&quot;Required header field missing: X-exco-APIKey:AppPublicKeyValue&quot;,&quot;complete&quot;:false}}}</Payload>
+        <StatusCode>401</StatusCode>
+        <ReasonPhrase>Unauthorized</ReasonPhrase>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

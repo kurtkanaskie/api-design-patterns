@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage enabled="true" continueOnError="false" async="false" name="Fault-default">
+    <DisplayName>Fault default</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Set>
+        	<Headers>
+                <Header name="Access-Control-Allow-Origin">*</Header>
+                <Header name="Access-Control-Allow-Headers">origin, x-requested-with, accept, x-exco-apikey</Header>
+                <Header name="Access-Control-Max-Age">3628800</Header>
+                <Header name="Access-Control-Allow-Methods">GET, PUT, POST, DELETE</Header>
+            </Headers>
+        <Payload contentType="application/json" variablePrefix="%" variableSuffix="#">{ &quot;proxyFault&quot;:{&quot;faultName&quot;:&quot;%fault.name#&quot;, &quot;message&quot;:&quot;%error.message#&quot; }}</Payload>
+        <StatusCode>{message.status.code}</StatusCode>
+        <ReasonPhrase>{message.reason.phrase}</ReasonPhrase>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"></AssignTo>
+</AssignMessage>

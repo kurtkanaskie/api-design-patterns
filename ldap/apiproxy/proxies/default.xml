@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint proxyType="httpConnection" name="default">
+    <DefaultFaultRule name="DefaultFaultRule">
+        <Step>
+            <FaultRules/>
+            <Name>Fault-default</Name>
+        </Step>
+        <AlwaysEnforce>false</AlwaysEnforce>
+    </DefaultFaultRule>
+    <Description/>
+    <FaultRules>
+        <FaultRule name="authenticate-invalid-params-via-raise-fault">
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/authenticate&quot;) and (fault.name = &quot;RaiseFault&quot;)</Condition>
+        </FaultRule>
+        <FaultRule name="cors-options">
+            <Condition>request.verb = &quot;OPTIONS&quot; and (fault.name = &quot;RaiseFault&quot;)</Condition>
+        </FaultRule>
+        <FaultRule name="no-apikey">
+            <Condition>fault.name = &quot;FailedToResolveAPIKey&quot; or fault.name = &quot;InvalidApiKey&quot;</Condition>
+            <Step>
+                <FaultRules/>
+                <Name>Assign-no-apikey</Name>
+            </Step>
+        </FaultRule>
+        <FaultRule name="invalid-host">
+            <Condition>(request.header.host != &quot;iapitest-dev.exco.com&quot;) and (request.header.host != &quot;iapi-dev.exco.com&quot;)</Condition>
+        </FaultRule>
+        <FaultRule name="invalid-IPAddress">
+            <Condition>fault.name = &quot;IPDeniedAccess&quot;</Condition>
+            <Step>
+                <FaultRules/>
+                <Name>Fault-default</Name>
+            </Step>
+        </FaultRule>
+    </FaultRules>
+    <Flows>
+        <Flow name="authenticate">
+            <Description/>
+            <Request>
+                <Step>
+                    <Condition>(request.formparam.username = NULL) or (request.formparam.username = "")
+                      		or (request.formparam.password = NULL) or (request.formparam.password = "")</Condition>
+                    <FaultRules/>
+                    <Name>Fault-required-fields</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/authenticate&quot;) and (request.verb = &quot;POST&quot;)</Condition>
+        </Flow>
+        <Flow name="users">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/users&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="users/id">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/users/*&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="status">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/status&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>JSON-to-XML</Name>
+                <Condition>exco.queryparam.format = "xml" or exco.header.accept = "application/xml"</Condition>
+            </Step>
+        </Response>
+    </PostFlow>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>Access-Control</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>Fault-blocked-host</Name>
+                <Condition>(request.header.host != &quot;iapitest-test.exco.com&quot;) and (request.header.host != &quot;iapi-test.exco.com&quot;)</Condition>
+            </Step>
+            <Step>
+                <Condition>(request.verb = &quot;OPTIONS&quot;)</Condition>
+                <FaultRules/>
+                <Name>Raise-Fault-CORS</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>Spike-Arrest</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>Verify-API-Key-1</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>Quota</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>Set-Default-Params</Name>
+            </Step>
+        </Request>
+        <Response>
+            <Step>
+                <FaultRules/>
+                <Name>Add-CORS</Name>
+            </Step>
+        </Response>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/internalDirectory/v1</BasePath>
+        <Properties/>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="StaticResponse">
+        <Condition>(proxy.pathsuffix MatchesPath &quot;/swagger&quot;) or (proxy.pathsuffix MatchesPath &quot;/wadl&quot;)</Condition>
+    </RouteRule>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

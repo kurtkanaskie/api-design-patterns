@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VerifyAPIKey enabled="true" continueOnError="false" async="false" name="Verify-API-Key-1">
+    <DisplayName>Verify API Key 1</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <APIKey ref="request.header.X-exco-APIKey"></APIKey>
+</VerifyAPIKey>

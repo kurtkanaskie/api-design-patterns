@@ -1,0 +1,8 @@
+{
+	"name": "api-ldap-exco",
+	"version": "0.0.1",
+	"main": "api-ldap-exco.js",
+	"dependencies": {
+		"ldapjs": "0.7.1"
+	}
+}

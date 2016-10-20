@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage enabled="true" continueOnError="false" async="false" name="Set-Target-Params">
+    <DisplayName>Set Target Params</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <AssignVariable>
+        <Name>request.queryparam.limit</Name>
+        <Ref>exco.queryparam.limit</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>request.queryparam.offset</Name>
+        <Ref>exco.queryparam.offset</Ref>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"></AssignTo>
+</AssignMessage>

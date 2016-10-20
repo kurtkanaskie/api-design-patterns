@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage enabled="true" continueOnError="false" async="false" name="Set-Default-Params">
+    <DisplayName>Set Default Params</DisplayName>
+    <FaultRules/>
+    <Properties/>
+  <!-- Client Info -->
+    <AssignVariable>
+        <Name>exco.client.ip</Name>
+        <Value>IP not Set</Value>
+        <Ref>client.ip</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>exco.client.host</Name>
+        <Value>Host not Set</Value>
+        <Ref>client.host</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>exco.header.host</Name>
+        <Value>Request header host not Set</Value>
+        <Ref>request.header.host</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>exco.proxy.client.ip</Name>
+        <Value>proxy ip not set</Value>
+        <Ref>proxy.client.ip</Ref>
+    </AssignVariable>
+  
+    <AssignVariable>
+        <Name>exco.message.uri</Name>
+        <Value>Message uri not set</Value>
+        <Ref>message.uri</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>exco.message.path</Name>
+        <Value>Message path not set</Value>
+        <Ref>message.path</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>exco.proxy.uri</Name>
+        <Value>proxy uri not set</Value>
+        <Ref>proxy.uri</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>exco.request.uri</Name>
+        <Value>request uri not set</Value>
+        <Ref>request.uri</Ref>
+    </AssignVariable>
+
+  <!-- End Client Info -->
+    <AssignVariable>
+        <Name>exco.queryparam.format</Name>
+        <Value>json</Value>
+        <Ref>request.queryparam.format</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>exco.queryparam.offset</Name>
+        <Value>0</Value>
+        <Ref>request.queryparam.offset</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>exco.queryparam.limit</Name>
+        <Value>10</Value>
+        <Ref>request.queryparam.limit</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>exco.queryparam.select</Name>
+        <Ref>request.queryparam.select</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>exco.queryparam.filter</Name>
+        <Ref>request.queryparam.filter</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>exco.header.accept</Name>
+        <Ref>request.header.accept</Ref>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>exco.header.content-type</Name>
+        <Ref>request.header.content-type</Ref>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"></AssignTo>
+</AssignMessage>

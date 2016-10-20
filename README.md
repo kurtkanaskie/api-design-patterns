@@ -7,12 +7,13 @@ Often a large enterprise customer will want to connect to "legacy" systems and d
 Apigee "Node.js App" proxy <--> express <--> adapter module <--> backend
 
 The examples in this pattern include:
-* mySQL (node-to-mysql)
-* MongoDB (node-to-mongodb)
-* MS SQL (node-to-mssql)
-* Terradata (node-to-terradata)
-* Postgres (node-to-postgres)
-* Oracle (node-to-oracle)
+* LDAP (node-to-ldap)
+* mySQL (node-to-mysql) TBD
+* MongoDB (node-to-mongodb) TBD
+* MS SQL (node-to-mssql) TBD
+* Terradata (node-to-terradata) TBD
+* Postgres (node-to-postgres) TBD
+* Oracle (node-to-oracle) TBD
 
 ## Proxy to Many WSDLs Design Pattern
 

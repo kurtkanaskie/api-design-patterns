@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault enabled="true" continueOnError="false" async="false" name="Fault-required-fields">
+    <DisplayName>Fault-required-fields</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Headers/>
+            <Payload contentType="application/json" variablePrefix="$" variableSuffix="#">{&quot;authentication&quot;:{&quot;metadata&quot;:{&quot;message&quot;:&quot;Required fields missing: Form Params username and password are required and cannot be empty.&quot;,&quot;complete&quot;:false}}}</Payload>
+            <StatusCode>400</StatusCode>
+            <ReasonPhrase>Bad Request</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>
