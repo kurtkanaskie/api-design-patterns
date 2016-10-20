@@ -1,7 +1,7 @@
 Internal-Directory
 ==================
 
-Exco's internal Active Directory API.
+#Exco's internal Active Directory API.
 
 Apiproxy can be fetched using:
 <br/>
@@ -12,22 +12,15 @@ Apiproxy can be deployed from the directory where the apiproxy directory exists,
 <br/>
 `apigeetool deployproxy -L http://{MANAGEMENT-SERVER}:8080 -u "username" -p 'password' -V -d . -n internal-directory -o exco -b /v1/internalDirectory -i`
 
+#Creating Static Documentation using API Blueprint and aglio
 
-###Creating Static Documentation using WADL (deprecated)
-
-Run the wadl.xsl stylesheet on the internalDirectory-wadl.xml file to generate the static HTML to add to the Dev Portal manually.
-<br/>
-`java -jar saxon9he.jar -s:internalDirectory-wadl.xml -xsl:wadl.xsl -o:internalDirectory.html`
-
-###Creating Static Documentation using API Blueprint and aglio
-
-# Show in browser and allow dynamic editing
+## Show in browser and allow dynamic editing
 aglio -t flatly -i internal-directory.apib -s
 
-# Generate final result
+## Generate final result
 aglio -t flatly -i internal-directory.apib -o internal-directory.html
 
-###Testing
+#Testing
 
 ##Mocha
 Just run "mocha" from the top level directory, it will run "test.js" in the "test" directory.
