@@ -1,31 +1,31 @@
 Internal-Directory
 ==================
 
-#Exco's internal Active Directory API.
-
-Apiproxy can be fetched using:
-<br/>
-`apigeetool fetchproxy -L http://{MANAGMENT-SERVER}:8080 -u "username" -p 'password' -o exco -n internal-directory -r 4 -f internal-directory.zip `
+##Exco's internal Active Directory API.
 
 <br/>
 Apiproxy can be deployed from the directory where the apiproxy directory exists, using:
 <br/>
 `apigeetool deployproxy -L http://{MANAGEMENT-SERVER}:8080 -u "username" -p 'password' -V -d . -n internal-directory -o exco -b /v1/internalDirectory -i`
 
-#Creating Static Documentation using API Blueprint and aglio
+Apiproxy can be fetched using:
+<br/>
+`apigeetool fetchproxy -L http://{MANAGMENT-SERVER}:8080 -u "username" -p 'password' -o exco -n internal-directory -r 4 -f internal-directory.zip `
 
-## Show in browser and allow dynamic editing
+##Creating Static Documentation using API Blueprint and aglio
+
+### Show in browser and allow dynamic editing
 aglio -t flatly -i internal-directory.apib -s
 
-## Generate final result
+### Generate final result
 aglio -t flatly -i internal-directory.apib -o internal-directory.html
 
-#Testing
+##Testing
 
-##Mocha
+###Mocha
 Just run "mocha" from the top level directory, it will run "test.js" in the "test" directory.
 
-##Apigee's APIB
+###Apigee's APIB
 
 Internal-Directory tests for Spike Arrest.
 
