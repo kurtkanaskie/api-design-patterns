@@ -192,7 +192,7 @@ describe('Happy Paths', function() {
 			api.post('/authenticate')
 			.type('application/x-www-form-urlencoded')
 			.set('x-exco-apikey', apiKey) 
-			.send({username : 'apigee', password : 'WebAPIs20!6'})
+			.send({username : 'DEMO_UN', password : 'DEMO_PW'})
 			.expect('Content-Type', 'application/json')
 			.expect(200)
 			.end(function(err, res) {    	
